@@ -60,7 +60,14 @@ python src/models/evaluate_model.py
 ```bash
 # Predicción individual
 python src/models/predict_image.py path/to/image.jpg
+
+# Demo con 10 imágenes incluidas
+python test_demo.py
 ```
+
+**Imágenes de prueba incluidas:**
+- `data/processed/ffpp/test/real/amigo1-5.jpeg` (fotos reales)
+- `data/processed/ffpp/test/fake/test_fake_1-5.jpg` (deepfakes)
 
 ### 5. Grad-CAM (Explicabilidad)
 ```bash
@@ -129,11 +136,11 @@ data/raw/ffpp/
 - **Optimizer:** Adam con weight decay 1e-5
 - **Loss:** CrossEntropyLoss con ponderación de clases (4.83 real, 1.00 fake)
 - **Augmentation:** RandomResizedCrop, HorizontalFlip, ColorJitter
-- **Hardware:** CPU (GPU opcional)
+- **Hardware:** GPU (Para los entrenamientos se uso una Nvidia GeForce 4070 RTX)
 
 ## Autor
 
-Luis - Universidad del Bío-Bío  
+Luis Pereira Toledo - Universidad del Bío-Bío  
 Ingeniería Civil en Informática  
-Asignatura: Aprendizaje de Máquina  
+Asignatura: Introduccion a las aplicaciones de algoritmos de Machine Learning y Deep Learning  
 Diciembre 2025

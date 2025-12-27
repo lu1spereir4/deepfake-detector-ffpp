@@ -20,12 +20,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libxext6 \
     libxrender-dev \
     libgomp1 \
-    libgl1-mesa-glx \
+    libgl1 \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Copiar archivo de requisitos
 COPY requirements.txt .
+
+# Instalar numpy compatible con PyTorch 2.1
+RUN pip install --no-cache-dir "numpy<2.0"
 
 # Instalar PyTorch CPU (versión ligera para contenedor sin GPU)
 RUN pip install --no-cache-dir \

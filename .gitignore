@@ -5,11 +5,19 @@
 # Videos originales (muy pesados)
 data/raw/
 
-# Imágenes procesadas (excepto fotos de amigos para demo)
+# Imágenes procesadas (excepto fotos de prueba para demo)
 data/processed/ffpp/train/
 data/processed/ffpp/val/
-data/processed/ffpp/test/**/
+
+# Ignorar todas las imágenes de test excepto las de demo
+data/processed/ffpp/test/real/*.jpg
+data/processed/ffpp/test/real/*.png
+data/processed/ffpp/test/fake/*.jpg
+data/processed/ffpp/test/fake/*.png
+
+# Permitir específicamente las imágenes de prueba para el profesor
 !data/processed/ffpp/test/real/amigo*.jpeg
+!data/processed/ffpp/test/fake/test_fake_*.jpg
 
 # CSVs generados (se pueden regenerar)
 data/processed/ffpp/*.csv
